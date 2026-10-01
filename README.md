@@ -12,6 +12,7 @@ Plain HTML, CSS and JavaScript. No build step, no dependencies.
 | `styles.css` | Layout and both themes (tokens at the top, light then dark) |
 | `main.js` | Court drawing, scroll logic, play diagrams, theme toggle |
 | `favicon.svg` | Tab icon |
+| `og.png` | Link-preview image |
 
 ## Run locally
 
@@ -34,7 +35,6 @@ Then open http://localhost:8000.
 - **Play diagrams:** the `plays` array in `main.js`. `nodes` are positions on a 300x250 half court, `edges` are passes, `seq` is the order the ball travels them. A section opts in with `data-play="<index>"`.
 - **Colors:** the `:root` blocks at the top of `styles.css`. Change a token in the light block and in both dark blocks.
 
-## Before going live
+## Link preview
 
-- Add `og:image` and `og:url` tags once the domain is settled, so link previews show a picture.
-- Confirm both linked GitHub repos are public.
+`og.png` (1200x630) is the image shown when the link is shared. The `og:url` and `og:image` tags in `index.html` point at the GitHub Pages address; update both if the site moves to another domain.
