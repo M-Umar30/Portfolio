@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Muhammad Umar · Backend engineer</title>
+<meta name="description" content="Muhammad Umar is a backend engineer building agentic AI systems and RAG pipelines. Scroll one possession, baseline to rim, through his work.">
+<meta property="og:title" content="Muhammad Umar · Backend engineer">
+<meta property="og:description" content="Muhammad Umar is a backend engineer building agentic AI systems and RAG pipelines. Scroll one possession, baseline to rim, through his work.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#E3E6E2" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0A0E13" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<script>try{var t=localStorage.getItem("theme");if(t==="dark"||t==="light")document.documentElement.dataset.theme=t}catch(e){}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..900&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="wrap">
+  <div class="stage">
+    <div class="hud">
+      <div aria-hidden="true" class="box clock" id="clockBox"><span class="k">Shot clock</span><span class="v" id="clock">24.0</span></div>
+      <div aria-hidden="true" class="box chap"><span class="k">Now</span><span class="v" id="chap">Inbound</span></div>
+      <div aria-hidden="true" class="box"><span class="k">Umar</span><span class="v" id="score">0</span></div>
+      <button class="box theme" id="theme" type="button" aria-label="Switch to dark mode">Dark</button>
+    </div>
+    <div class="court-box" aria-hidden="true"><svg id="court" viewBox="0 0 500 940" preserveAspectRatio="xMidYMid meet"></svg></div>
+  </div>
+
+  <main class="story">
+    <section class="step" data-chap="Inbound">
+      <p class="eyebrow">Possession 1 · <b>Q4</b> · 24 on the clock</p>
+      <h1><span>Muhammad</span>Umar</h1>
+      <p class="lede">Backend engineer for agentic AI. I build the systems where several agents each do one job and something has to decide who gets the ball next.</p>
+      <ul class="meta"><li>Ashburn, VA</li><li>Targeting NYC · open to relocate</li><li>U.S. citizen</li></ul>
+      <p class="hint"><i></i>Scroll to bring it up the floor</p>
+    </section>
+
+    <section class="step" data-chap="Bring it up">
+      <p class="eyebrow">Backcourt</p>
+      <h2>Bringing it up</h2>
+      <p>Two years, four teams. Each stop moved the ball further up the floor.</p>
+      <ol class="log">
+        <li><span class="yr">2024</span><div><b>Komatsu<small>Apprentice</small></b><p>Built an internal ordering tool nobody asked for. Cut admin overhead 90% for 100+ employees.</p></div></li>
+        <li><span class="yr">2024–25</span><div><b>QLU.AI<small>Full stack</small></b><p>Shipped features end to end in TypeScript for an AI recruiting platform that launched with US firms.</p></div></li>
+        <li><span class="yr">2025–26</span><div><b>Emumba<small>Software engineer</small></b><p>Sole backend engineer for GenAI research. Built a low-code agentic workflow platform in five weeks.</p></div></li>
+        <li><span class="yr">2026</span><div><b>ResourcePool<small>Software engineer</small></b><p>Built a multi-agent operations platform and ran a security hardening pass on a production app.</p></div></li>
+      </ol>
+    </section>
+
+    <section class="step" data-chap="Motion offense" data-play="0">
+      <p class="set">Set · Motion offense</p>
+      <h2>Businesses Board</h2>
+      <p class="ctx">ResourcePool · 2026 · client work</p>
+      <p>An operations platform for about 15 staff across 14 business groups. A Router hands each request to the right agent: an Overseer briefs the owner, a Planner sets the week, an Analyst answers questions, a Scribe drafts messages. An AI CEO argues with the Planner when they disagree.</p>
+      <ul class="watch">
+        <li>Guardrails come from which MCP tools each agent is handed. No agent can spend, hire, message a client or delete.</li>
+        <li>A light model for frequent briefs, a reasoning model for judgment calls.</li>
+        <li>Every agent has a deterministic fallback, so the system runs end to end without an API key.</li>
+      </ul>
+      <ul class="chips"><li>FastAPI</li><li>Claude API</li><li>MCP</li><li>Next.js</li><li>Postgres</li></ul>
+    </section>
+
+    <section class="step" data-chap="Horns fan-out" data-play="1">
+      <p class="set">Set · Horns fan-out</p>
+      <h2>Multi-Agent Code Review</h2>
+      <p class="ctx">Personal project · open source</p>
+      <p>Give it a public GitHub repo. A LangGraph planner sends three specialists out at once (security, test coverage, style), then one LLM call turns their findings into a single report.</p>
+      <ul class="watch">
+        <li>Every agent reads the repo through the GitHub MCP server. Nothing is cloned or mocked.</li>
+        <li>The style agent runs the repo's real linter against its own config.</li>
+        <li>If the LLM times out, the report falls back to a mechanical summary instead of failing.</li>
+      </ul>
+      <ul class="chips"><li>LangGraph</li><li>FastAPI</li><li>GitHub MCP</li></ul>
+      <a class="link" href="https://github.com/M-Umar30/Multi-Agent-Code-Review" target="_blank" rel="noopener">Watch the film on GitHub ↗</a>
+    </section>
+
+    <section class="step" data-chap="Critic loop" data-play="2">
+      <p class="set">Set · Critic loop</p>
+      <h2>Codebase Onboarding Assistant</h2>
+      <p class="ctx">Personal project · in progress</p>
+      <p>Ask "how does auth work here?" about an unfamiliar codebase and get an answer with file and line citations checked against the real code.</p>
+      <ul class="watch">
+        <li>A critic agent checks every citation and catches fabricated ones, wrong locations and unsupported claims.</li>
+        <li>The critic decides by judgment whether to re-retrieve, regenerate or ship. No retry counter.</li>
+        <li>Tested against a hallucination fixture set, with a trace of every route the graph took.</li>
+      </ul>
+      <ul class="chips"><li>LangGraph</li><li>pgvector</li><li>tree-sitter</li></ul>
+      <a class="link" href="https://github.com/M-Umar30/Codebase-Onboarding-Assistant" target="_blank" rel="noopener">Watch the film on GitHub ↗</a>
+    </section>
+
+    <section class="step" data-chap="The shot">
+      <p class="eyebrow">Clock winding down</p>
+      <h2>Take the shot</h2>
+      <div class="bench">
+        <div><b>GateScore hardening</b><p>A security pass on a production app that handles applicant PII. Auth-boundary test across all 88 routes, a CI gate before deploy, a nonce-based CSP, 156 tests.</p></div>
+      </div>
+      <p>Looking for backend and agentic AI roles in New York or anywhere I'd relocate in the US.</p>
+      <div class="contact">
+        <div><div class="k">Email</div><div class="mail"><span id="mail">muhammadumar2248@gmail.com</span><button class="btn" id="copy" type="button">Copy</button></div></div>
+        <div><div class="k">LinkedIn</div><a class="v" href="https://www.linkedin.com/in/muhammad-umar-114590240" target="_blank" rel="noopener">in/muhammad-umar-114590240 ↗</a></div>
+        <div><div class="k">GitHub</div><a class="v" href="https://github.com/M-Umar30" target="_blank" rel="noopener">M-Umar30 ↗</a></div>
+      </div>
+      <p class="final">Bucket.</p>
+      <footer>Muhammad Umar · Backend engineer · Captained varsity basketball at FAST NUCES, still plays five nights a week.</footer>
+    </section>
+  </main>
+</div>
+<script src="main.js" defer></script>
+</body>
+</html>
