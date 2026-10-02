@@ -31,7 +31,7 @@ Then open http://localhost:8000.
 ## Editing
 
 - **Copy:** edit `index.html`. Each `<section class="step">` is one scroll stop; `data-chap` is the label shown in the scoreboard.
-- **Career stops on the court:** the `stations` array in `main.js`. Keep it the same length as the career list in `index.html`.
+- **Career stops on the court:** the `stations` array in `main.js`. Each career row in `index.html` points at its stop with `data-st="<index>"` (0 is the first stop the ball reaches), so keep the two in step.
 - **Play diagrams:** the `plays` array in `main.js`. `nodes` are positions on a 300x250 half court, `edges` are passes, `seq` is the order the ball travels them. A section opts in with `data-play="<index>"`.
 - **Colors:** the `:root` blocks at the top of `styles.css`. Change a token in the light block and in both dark blocks.
 

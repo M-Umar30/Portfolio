@@ -36,7 +36,9 @@
     {nodes:{P:[150,212,"P","Planner",1],S:[50,140,"S","Security"],T:[250,140,"T","Tests"],Y:[150,118,"Y","Style","r"],G:[150,42,"G","Report","r"]},
      edges:[["P","S"],["P","T"],["P","Y"],["S","G"],["T","G"],["Y","G"]],seq:[0,3,1,4,2,5]},
     {nodes:{P:[150,212,"P","Planner",1],R:[50,170,"R","Retrieve"],D:[72,86,"D","Drafter"],C:[236,128,"C","Critic"],G:[150,42,"✓","Ship","r"]},
-     edges:[["P","R"],["R","D"],["D","C"],["C","R","loop",34,"re-retrieve"],["C","D","loop",-34,"regenerate"],["C","G"]],seq:[0,1,2,3,1,2,4,2,5]}
+     edges:[["P","R"],["R","D"],["D","C"],["C","R","loop",34,"re-retrieve"],["C","D","loop",-34,"regenerate"],["C","G"]],seq:[0,1,2,3,1,2,4,2,5]},
+    {nodes:{C:[150,212,"C","Client",1],A:[150,132,"A","Auth gate","r"],R1:[58,62,"1","Clients"],R2:[150,42,"2","Reports","r"],R3:[242,62,"3","Admin"]},
+     edges:[["C","A"],["A","C","loop",-64,"401"],["A","R1"],["A","R2"],["A","R3"]],seq:[0,1,0,2,3,4]}
   ];
   plays.forEach((p,pi)=>{
     const g=el("g",{class:"play"},svg); p.g=g;
@@ -65,6 +67,8 @@
   const pop=el("text",{x:250,y:150,class:"score-pop"},svg); pop.textContent="+2";
 
   const steps=[...document.querySelectorAll(".step")];
+  const logEls=stations.map((_,i)=>document.querySelector('.log [data-st="'+i+'"]'));
+  const markStop=(i,on)=>{stEls[i].classList.toggle("on",on);if(logEls[i])logEls[i].classList.toggle("on",on);};
   const chap=document.getElementById("chap"), clock=document.getElementById("clock"), clockBox=document.getElementById("clockBox"), score=document.getElementById("score");
   const FULL=[0,0,500,940], FRONT=[-30,-24,560,540];
   let vbNow=FULL.slice();
@@ -91,8 +95,8 @@
       const u=clamp(t/0.72,0,1); let dist=u*total, i=0; while(i<segs.length-1&&dist>segs[i]){dist-=segs[i];i++;}
       const f=clamp(dist/segs[i],0,1); ballX=lerp(route[i].x,route[i+1].x,f); ballY=lerp(route[i].y,route[i+1].y,f);
       ballR=13-2.5*Math.abs(Math.sin(u*Math.PI*14));
-      stEls.forEach((s,j)=>s.classList.toggle("on",u*total>=segs.slice(0,j+1).reduce((a,b)=>a+b,0)-1));
-    } else stEls.forEach(s=>s.classList.toggle("on",active>1));
+      stEls.forEach((s,j)=>markStop(j,u*total>=segs.slice(0,j+1).reduce((a,b)=>a+b,0)-1));
+    } else stEls.forEach((s,j)=>markStop(j,active>1));
 
     // plays
     plays.forEach((p,pi)=>{
